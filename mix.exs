@@ -28,7 +28,7 @@ defmodule ExMachina.Mixfile do
     ]
   end
 
-  def app_list(:test), do: app_list() ++ [:ecto, :postgrex]
+  def app_list(:test), do: app_list() ++ []
   def app_list(_), do: app_list()
   def app_list(), do: [:logger]
 
@@ -36,9 +36,6 @@ defmodule ExMachina.Mixfile do
     [
       {:ex_doc, "~> 0.9", only: :dev},
       {:earmark, ">= 0.0.0", only: :dev},
-      {:ecto, "~> 2.0", optional: true},
-      {:ecto, "~> 2.0", only: [:dev, :test]},
-      {:postgrex, ">= 0.0.0", only: [:test]},
       {:poison, "~> 2.0.0", only: :test}
     ]
   end
